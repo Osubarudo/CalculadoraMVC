@@ -5,6 +5,10 @@
  */
 package principal;
 
+import controlador.Controlador;
+import modelo.Calculadora;
+import vista.FormCalculadora;
+
 /**
  *
  * @author osval
@@ -15,7 +19,13 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Calculadora mod = new Calculadora();
+        FormCalculadora view = new FormCalculadora();
+
+        Controlador ctrl = new Controlador(view, mod);
+        ctrl.iniciar();
+        view.setVisible(true);
+
     }
-    
+
 }
